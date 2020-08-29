@@ -45,7 +45,8 @@ def about(request):
         djtext=analyzed
         # return render(request, 'analyse.html', params)
     if ( removepunc!="on" and newlineremoval!="on" and spaceremoval!="on" and capsUp!="on"):
-        return HttpResponse("Please Select any Operations!!")
+        param = {'error': 'Please Select any operation'}
+        return render(request,'error.html',param)
     return render(request, 'analyse.html', params)
 
 # def home(request):
